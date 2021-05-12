@@ -24,4 +24,4 @@ const questionBank = [
         answers: ["Abubu", "Genie", "Abu", "Rajah"],
         correctAnswer: "Abu"
       },
-    ]
+    ];
