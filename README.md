@@ -1,5 +1,11 @@
 # Quiz_Disney
 
+## Links
+
+Git site: https://patelso9.github.io/Quiz_Disney/
+
+Git Repository: https://github.com/Patelso9/Quiz_Disney
+
 ## User Story
 AS A coding boot camp student
 I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
