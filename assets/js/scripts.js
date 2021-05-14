@@ -1,8 +1,11 @@
-// declare all variables
+// Declare variables
+ // start button
 var startBtn = document.querySelector('#start-btn');
 var start = document.querySelector('.start');
-var timerEl = document.querySelector('.timer')
+      // console.log(startBtn);
+      // console.log(start);
 
+  // question cards
 var qCard = document.querySelector('#quiz-card');
 var question = document.querySelector('#question');
 var answer = document.querySelector('#answer');
@@ -13,36 +16,56 @@ var optB = document.querySelector("#B")
 var optC = document.querySelector("#C")
 var optD = document.querySelector("#D")
 
-console.log(startBtn);
-console.log(start);
 
-// set up variables
+  // timer variables
+var timerEl = document.querySelector('.timer')
 var timeLeft = questionBank.length*10;
+var timeInt;
+var q = 0;
 
-// start timer
+  // score card
+var s = 0;
+var score = 0;
+var scoreBoard = [];
+
+
+// run timer
 function startTimer() {
-  timer = setInterval(function() {
+  timeInt = setInterval(function() {
     timeLeft--;
     timerEl.textContent = "Time Remaining: " + timeLeft;
-    if (timerLeft === 0) {
+    if (timerLeft === 0 || q <= questionBank.length) {
         // Clears interval and stops timer
-        clearInterval(timer);
+        clearInterval(timeInt);
         endGame();
       }
     }, 1000);
 }
 
+// run questions
 function runQuestions () {
-
+  if (q<questionBank.length) {
+    question.textContent=questionBank[q].question;
+    optA.textContent = questionBank[q].selection[0];
+    optB.textContent = questionBank[q].selection[1];
+    optC.textContent = questionBank[q].selection[2];
+    optD.textContent = questionBank[q].selection[3];
+  }
+  else endGame();
 }
 
+// choosing right/wrong answers
+function
 
 
 // event listeners
+
+  // start game
 startBtn.addEventListener("click", function(event) {
   startTimer();
   // runQuestions();
   start.classList.add("hide");
+  qCard.classList.remove("hide");
 
 
 })
