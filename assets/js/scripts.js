@@ -6,22 +6,22 @@ var start = document.querySelector('.start');
       // console.log(start);
 
   // question cards
-var qCard = document.querySelector('#quiz-card');
+var qCard = document.querySelector('.question-page');
 var question = document.querySelector('#question');
 var answer = document.querySelector('#answer');
-var question = document.querySelector('#question');
+var choices = document.querySelector('#choices');
 
 var optA = document.querySelector("#A")
 var optB = document.querySelector("#B")
 var optC = document.querySelector("#C")
 var optD = document.querySelector("#D")
 
+var q = 0;
 
   // timer variables
 var timerEl = document.querySelector('.timer')
 var timeLeft = questionBank.length*10;
 var timeInt;
-var q = 0;
 
   // score card
 var s = 0;
@@ -55,7 +55,22 @@ function runQuestions () {
 }
 
 // choosing right/wrong answers
-function
+function chooseAns (event) {
+  if (q >= questionBank.length){
+    endGame();
+    clearInterval(timeInt);
+  } else {
+    if (event === questionBank[q].answer ){
+      feedback1.textContent = "Correct!"
+    } else {
+      timeLeft -= 5;
+      feedback2.textContent = "Wrong!"
+    }
+    score = timeLeft;
+    q++;
+    runQuestions ();
+  }
+}
 
 
 // event listeners
@@ -68,4 +83,11 @@ startBtn.addEventListener("click", function(event) {
   qCard.classList.remove("hide");
 
 
-})
+});
+
+  // question cards
+choices.addEventListener('click', function (event) {
+  var event = event.target;
+  chooseAns(event.textContent.trim());
+});
+

@@ -34,49 +34,27 @@
     </div>
 
 <!-- Quiz Card -->
-    <div id="quiz-card" class="w3-container hide">
+    <div class= "question-page hide">
       
       <h2 class="timer">Timer:</h2>
       
-      <div id="card1" class="w3-card-4">
-        <header>
-          <h3 class="question">Question</h3>
-        </header>
-
-        <hr style="margin-top:0; border-color: red">
-          <div id="choices" class="w3-container">
-          <div class="anschoice">
-            <label id="A"></label>
-            </div><hr>
-
-          <div class="anschoice">
-            <label id="B"></label>
-            </div><hr>
-
-          <div class="anschoice">
-            <label id="C"></label>
-            </div><hr>
-
-          <div class="anschoice">
-            <label  id="D"></label>            
-            </div><hr>
+      <div id="question-card" class="card" style="width: 18rem;">
+        <div id= "question" class="card-header">
+          Question
+        </div>
+        <ul class="list-group list-group-flush">
+          <li id="A" class="list-group-item">A. </li>
+          <li id="B" class="list-group-item">B.</li>
+          <li id="C" class="list-group-item">C.</li>
+          <li id="D" class="list-group-item">D.</li>
+        </ul>
       </div>
     
     </div>
 
-
-    <section>
-      <div class="question-text">
-        <span>Question</span>
-      </div>
-      <div class="answer-list">
-        <span>Answer Choices</span>
-      </div>
-    </section>
-
     <footer>
-      <div class="card_footer"><p>Footer</p></div>
-      <button class="btn btn-primary next-btn">Next</button>
+      <div class="card_footer hide"><p>Footer</p></div>
+      <button class="btn btn-primary next-btn hide">Next</button>
     </footer>
     </div>
 

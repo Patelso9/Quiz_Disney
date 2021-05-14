@@ -19,6 +19,13 @@ main{
 
 }
 
+.start {
+}
+
 .hide {
     display: none;
+}
+
+#question-card {
+    color: darkblue;
 }
