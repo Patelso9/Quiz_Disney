@@ -1,27 +1,48 @@
 // declare all variables
-var start_btn = document.getElementById('#start-btn');
-var start = document.getElementById('.start');
-var timerDisp = document.getElementById('.timer')
+var startBtn = document.querySelector('#start-btn');
+var start = document.querySelector('.start');
+var timerEl = document.querySelector('.timer')
 
-var q_card = document.getElementById('#quiz-card');
-var question = document.getElementById('#question');
-var answer = document.getElementById('#answer');
-var question = document.getElementById('#question');
+var qCard = document.querySelector('#quiz-card');
+var question = document.querySelector('#question');
+var answer = document.querySelector('#answer');
+var question = document.querySelector('#question');
 
-var optA = document.getElementById("#A")
-var optB = document.getElementById("#B")
-var optC = document.getElementById("#C")
-var optD = document.getElementById("#D")
+var optA = document.querySelector("#A")
+var optB = document.querySelector("#B")
+var optC = document.querySelector("#C")
+var optD = document.querySelector("#D")
 
-console.log()
+console.log(startBtn);
+console.log(start);
 
-// declare variables to keep track of quiz statement (q index, time, time variables)
-var timeLeft = questionBank.length * 10
+// set up variables
+var timeLeft = questionBank.length*10;
 
-
-// create startQuiz function to sart qiuz
-start_btn.onclick = () => {
-  q_card.classList.add("queQuest")
+// start timer
+function startTimer() {
+  timer = setInterval(function() {
+    timeLeft--;
+    timerEl.textContent = "Time Remaining: " + timeLeft;
+    if (timerLeft === 0) {
+        // Clears interval and stops timer
+        clearInterval(timer);
+        endGame();
+      }
+    }, 1000);
 }
 
-console.log(startButton);
+function runQuestions () {
+
+}
+
+
+
+// event listeners
+startBtn.addEventListener("click", function(event) {
+  startTimer();
+  // runQuestions();
+  start.classList.add("hide");
+
+
+})
