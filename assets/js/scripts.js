@@ -7,14 +7,13 @@ var start = document.querySelector('.start');
 
   // question cards
 var qCard = document.querySelector('.question-page');
-var question = document.querySelector('#question');
-var answer = document.querySelector('#answer');
-var choices = document.querySelector('#choices');
+var qList = document.querySelector('#q-list');
 
-var optA = document.querySelector("#A")
-var optB = document.querySelector("#B")
-var optC = document.querySelector("#C")
-var optD = document.querySelector("#D")
+var qEl = document.querySelector('question-line')
+var optA = document.querySelector("#opt-a")
+var optB = document.querySelector("#opt-b")
+var optC = document.querySelector("#opt-c")
+var optD = document.querySelector("#opt-d")
 
 var q = 0;
 
@@ -34,7 +33,7 @@ function startTimer() {
   timeInt = setInterval(function() {
     timeLeft--;
     timerEl.textContent = "Time Remaining: " + timeLeft;
-    if (timerLeft === 0 || q <= questionBank.length) {
+    if (timeLeft === 0 || q <= questionBank.length) {
         // Clears interval and stops timer
         clearInterval(timeInt);
         endGame();
@@ -44,14 +43,14 @@ function startTimer() {
 
 // run questions
 function runQuestions () {
-  if (q<questionBank.length) {
-    question.textContent=questionBank[q].question;
-    optA.textContent = questionBank[q].selection[0];
-    optB.textContent = questionBank[q].selection[1];
-    optC.textContent = questionBank[q].selection[2];
-    optD.textContent = questionBank[q].selection[3];
+  if (q < questionBank.length) {
+    qEl.textContent = questionBank[q].question;
+    optA.textContent = questionBank[q].options[0];
+    optB.textContent = questionBank[q].options[1];
+    optC.textContent = questionBank[q].options[2];
+    optD.textContent = questionBank[q].options[3];
   }
-  else endGame();
+  // else endGame();
 }
 
 // choosing right/wrong answers
@@ -61,10 +60,10 @@ function chooseAns (event) {
     clearInterval(timeInt);
   } else {
     if (event === questionBank[q].answer ){
-      feedback1.textContent = "Correct!"
+      // feedback1.textContent = "Correct!"
     } else {
       timeLeft -= 5;
-      feedback2.textContent = "Wrong!"
+      // feedback2.textContent = "Wrong!"
     }
     score = timeLeft;
     q++;
@@ -86,7 +85,7 @@ startBtn.addEventListener("click", function(event) {
 });
 
   // question cards
-choices.addEventListener('click', function (event) {
+qList.addEventListener('click', function (event) {
   var event = event.target;
   chooseAns(event.textContent.trim());
 });

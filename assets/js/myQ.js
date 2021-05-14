@@ -7,12 +7,12 @@ const questionBank = [
     {
       question: "Which character sings 'kiss the girl'",
       options: ["Flounder", "Tinker Bell", "Sebastian", "Donkey"],
-        answer: "Sebastian"
+      answer: "Sebastian"
       },
     {
       question: "What name does Mulan use when pretending to be a man?",
-        options: ["Mushu", "Ping", "Ling", "Li Shang"],
-        answer: "Ping",
+      options: ["Mushu", "Ping", "Ling", "Li Shang"],
+      answer: "Ping",
       },
     {
       question: "Mowgli was raised by what animals?",
@@ -21,7 +21,7 @@ const questionBank = [
       },
     {
       question: "Wha† was the name of Aladin's side-kick?",
-        answers: ["Abubu", "Genie", "Abu", "Rajah"],
-        correctAnswer: "Abu"
+      options: ["Abubu", "Genie", "Abu", "Rajah"],
+      answer: "Abu"
       },
     ];
