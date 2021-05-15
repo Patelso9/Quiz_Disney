@@ -1,4 +1,4 @@
-const questionBank = [
+var questionBank = [
     {
       question: "What does Hakuna Matata mean?",
       options: ["I love you","Happy days", "Rising sun","No worries"],

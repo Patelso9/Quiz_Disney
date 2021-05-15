@@ -6,10 +6,11 @@ var start = document.querySelector('.start');
       // console.log(start);
 
   // question cards
-var qCard = document.querySelector('.question-page');
-var qList = document.querySelector('#q-list');
+var qPage = document.querySelector('#question-page');
+var qCard = document.querySelector('#question-card');
 
-var qEl = document.querySelector('question-line')
+var qEl = document.querySelector('#question-line')
+var choiceEl = document.querySelector('#q-list')
 var optA = document.querySelector("#opt-a")
 var optB = document.querySelector("#opt-b")
 var optC = document.querySelector("#opt-c")
@@ -33,7 +34,7 @@ function startTimer() {
   timeInt = setInterval(function() {
     timeLeft--;
     timerEl.textContent = "Time Remaining: " + timeLeft;
-    if (timeLeft === 0 || q <= questionBank.length) {
+    if (timeLeft === 0 || q >= questionBank.length) {
         // Clears interval and stops timer
         clearInterval(timeInt);
         endGame();
@@ -42,13 +43,25 @@ function startTimer() {
 }
 
 // run questions
-function runQuestions () {
+function askQuestions () {
+  // var currentQ = questionBank;  // retrieve current item
+
   if (q < questionBank.length) {
-    qEl.textContent = questionBank[q].question;
-    optA.textContent = questionBank[q].options[0];
-    optB.textContent = questionBank[q].options[1];
-    optC.textContent = questionBank[q].options[2];
-    optD.textContent = questionBank[q].options[3];
+    qEl.textContent = questionBank[q].question;  //update Q on HTML 
+    // choiceEl.innerHTML="";  //clear out old question on HTML
+    //   console.log(qEl);
+    // loop over choice array
+    choiceEl.textContent = questionBank[q].options;
+  // for (var i =0; i < 4; i++){
+  //   choiceEl[i] = questionBank[q].
+
+  // }
+  
+  //   qEl.textContent = questionBank[q].question;
+  //   optA.textContent = questionBank[q].options[0];
+  //   optB.textContent = questionBank[q].options[1];
+  //   optC.textContent = questionBank[q].options[2];
+  //   optD.textContent = questionBank[q].options[3];
   }
   // else endGame();
 }
@@ -67,7 +80,7 @@ function chooseAns (event) {
     }
     score = timeLeft;
     q++;
-    runQuestions ();
+    askQuestions ();
   }
 }
 
@@ -77,16 +90,19 @@ function chooseAns (event) {
   // start game
 startBtn.addEventListener("click", function(event) {
   startTimer();
-  // runQuestions();
+  askQuestions();
   start.classList.add("hide");
-  qCard.classList.remove("hide");
+  qPage.classList.remove("hide");
 
 
 });
 
   // question cards
-qList.addEventListener('click', function (event) {
+qCard.addEventListener('click', function (event) {
   var event = event.target;
   chooseAns(event.textContent.trim());
 });
 
+function endGame(){
+  return null;
+};

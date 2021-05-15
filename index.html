@@ -34,20 +34,13 @@
     </div>
 
 <!-- Quiz Card -->
-    <div class= "question-page hide">
+    <div id="question-page" class= "hide">
       
       <h2 class="timer">Timer:</h2>
-      
-      <div id="question-card" class="card" style="width: 18rem;">
-        <div id= "question-line" class="card-header">
-          Question
-        </div>
-        <ul id=q-list class="list-group list-group-flush">
-          <li id="opt-a" class="list-group-item">A. </li>
-          <li id="opt-b" class="list-group-item">B. </li>
-          <li id="opt-c" class="list-group-item">C. </li>
-          <li id="opt-d" class="list-group-item">D. </li>
-        </ul>
+
+      <div id="question-card">
+        <h3 id="question-line"></h3>
+        <div id="q-list" class="choices"></div>
       </div>
     
     </div>
@@ -56,17 +49,17 @@
       <div class="card_footer hide"><p>Footer</p></div>
       <button class="btn btn-primary next-btn hide">Next</button>
     </footer>
-    </div>
+
 
 
     </main>
         
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
     <script src="assets/js/myQ.js"></script>
     <!-- <script src="assets/js/hsLogic.js"></script> -->
     <script src="./assets/js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
 
 </body>
 </html>
